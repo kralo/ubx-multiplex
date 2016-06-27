@@ -176,7 +176,7 @@ fn main() {
                                 _ => {}
                             }
                         }
-                        if block_state == PassthroughState::Blocked {
+                        if block_state == PassthroughState::Unblocked {
                             // io::stdout().write(b"$GNTXT,01,01,02,S1: \
                             // data follows*79\r\n").unwrap();
                             io::stdout().write(&client_buffer).unwrap();
@@ -351,7 +351,7 @@ fn main() {
                         io::stdout().write(format!("]\n").as_bytes()).unwrap();*/
                         // io::stdout().write(format!("{:02X}", x).as_bytes()).unwrap();
                         //io::stdout().write(b"$GNTXT,01,01,02,S2: data follows*7A\r\n").unwrap();
-                        if last_state == PassthroughState::Unblocked {
+                        if last_state == PassthroughState::Blocked {
                             // only write content if unblocked. Else the first stream is better.
                             io::stdout().write(&client_buffer).unwrap();
                         }
