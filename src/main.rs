@@ -97,7 +97,7 @@ fn main() {
             program.fail();
         });
 
-        let port_mon = args.next()
+/*        let port_mon = args.next()
             .unwrap_or_else(|| {
                 program.usage();
                 program.fail();
@@ -108,7 +108,7 @@ fn main() {
                 program.usage();
                 program.fail();
             });
-
+*/
     // SETUP end
 
     /*let listener = TcpListener::bind(&("127.0.0.1", port_mon)).unwrap();
