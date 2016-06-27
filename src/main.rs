@@ -351,7 +351,10 @@ fn main() {
                         io::stdout().write(format!("]\n").as_bytes()).unwrap();*/
                         // io::stdout().write(format!("{:02X}", x).as_bytes()).unwrap();
                         //io::stdout().write(b"$GNTXT,01,01,02,S2: data follows*7A\r\n").unwrap();
-                        io::stdout().write(&client_buffer).unwrap();
+                        if last_state == PassthroughState::Unblocked {
+                            // only write content if unblocked. Else the first stream is better.
+                            io::stdout().write(&client_buffer).unwrap();
+                        }
                         io::stdout().flush().unwrap();
                     }
 
