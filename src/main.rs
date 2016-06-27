@@ -176,7 +176,7 @@ fn main() {
                                 _ => {}
                             }
                         }
-                        if block_state == PassthroughState::Unblocked {
+                        if block_state == PassthroughState::Blocked {
                             // io::stdout().write(b"$GNTXT,01,01,02,S1: \
                             // data follows*79\r\n").unwrap();
                             io::stdout().write(&client_buffer).unwrap();
